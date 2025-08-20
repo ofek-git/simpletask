@@ -1,0 +1,18 @@
+name: "simpleworkflow"
+
+on: [push]
+jobs:
+  installlint:
+    runs-on: ubuntu-latest
+    steps:
+       - name: "install shellcheck"
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+  checklint:
+    needs: installlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout repo"
+        uses: actions/checkout@v3
+      - name: "linter check"
+        run: shellcheck chifup.sh
