@@ -5,7 +5,7 @@ jobs:
   installlint:
     runs-on: ubuntu-latest
     steps:
-       - name: "install shellcheck"
+      - name: "install shellcheck"
         run: sudo apt-get update && sudo apt-get install -y shellcheck
 
   checklint:
