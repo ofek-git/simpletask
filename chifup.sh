@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if -pgrep -x "xlogo" > /dev/null ; then
+if pgrep -x "xlogo" > /dev/null ; then
 echo "xlogo is up"
 exit 1
 else 
